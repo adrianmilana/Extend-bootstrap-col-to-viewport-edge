@@ -1,0 +1,47 @@
+// Extend bootstrap column to viewport edge effect
+
+// A small bootstrap sass mixin based off the make-container-max-widths() 
+// mixin to give the effect of one column inside a container extending 
+// to the edge of the viewport.
+
+// No absolute positioning, ::after selector or hacks needed. Simply have 
+// one .row .no-gutter element and two child .cols. The mixin minuses 
+// $container-max-width() from 100vw and sets it as the margin either on 
+// the left or right. As $container-max-width() is set for each breakpoint 
+// his mixin works across all browser widths and has a max width so it 
+// works when you need to stack your columns.
+
+@mixin make-col-ext-left($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+      margin-left: calc((100vw - #{$container-max-width}) / 2);
+    }
+  }
+}
+
+@mixin make-col-ext-right($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+      margin-right: calc((100vw - #{$container-max-width}) / 2);
+    }
+  }
+}
+
+.container-offset-left {
+  margin-left: 0; // stackable
+  padding: 0 ($grid-gutter-width / 2);
+  @include make-container-max-widths-left();
+}
+
+.container-offset-right {
+  margin-right: 0; // stackable
+  padding: 0 ($grid-gutter-width / 2);
+  @include make-container-max-widths-right();
+
+  // // adjust the below as needed. depends if parent is col-sm, md. lg etc
+  @include media-breakpoint-down(sm) {
+    @include make-container-max-widths-left();
+  }
+}
