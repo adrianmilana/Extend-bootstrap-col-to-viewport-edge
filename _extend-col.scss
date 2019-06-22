@@ -32,16 +32,16 @@
 .container-offset-left {
   margin-left: 0; // stackable
   padding: 0 ($grid-gutter-width / 2);
-  @include make-container-max-widths-left();
+  @include make-col-ext-left();
 }
 
 .container-offset-right {
   margin-right: 0; // stackable
   padding: 0 ($grid-gutter-width / 2);
-  @include make-container-max-widths-right();
+  @include make-col-ext-right();
 
   // // adjust the below as needed. depends if parent is col-sm, md. lg etc
   @include media-breakpoint-down(sm) {
-    @include make-container-max-widths-left();
+    @include make-col-ext-left();
   }
 }
