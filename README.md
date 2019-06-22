@@ -1,6 +1,6 @@
 # Extend Bootstrap .container .col to edge ofviewport effect
 
-![alt text](http://url/to/img.png)
+![alt text](http://adrianmilana.com/github/layout.png)
 
 A small bootstrap sass mixin based off the make-container-max-widths() 
 mixin to give the effect of one column inside a container extending to 
