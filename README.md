@@ -1,4 +1,4 @@
-# Extend Bootstrap .container .col to edge ofviewport effect
+# Extend Bootstrap .col to viewport edge
 
 ![alt text](http://adrianmilana.com/github/layout.png)
 
