@@ -1,4 +1,4 @@
-# Extend-bootstrap-.container-.col-to-edge-of-viewport-fix
+# Extend Bootstrap .container .col to edge ofviewport effect
 
 A small bootstrap sass mixin based off the make-container-max-widths() 
 mixin to give the effect of one column inside a container extending to 
